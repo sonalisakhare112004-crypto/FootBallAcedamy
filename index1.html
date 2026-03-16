@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Football Academy</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+<style>
+    :root{
+    --maroonColor:#B53232;
+    --GrayColor:#656565;
+}
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background-color:#cbc6c6;
+width:100%;
+}
+
+.maroonColor{
+color:var(--maroonColor);
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 80px;
+position:absolute;
+top:0;
+width:100%;
+font-size:20px;
+}
+
+/* LOGO */
+
+.logo img{
+width:120px;
+}
+
+/* MENU */
+
+.menu{
+display:flex;
+list-style:none;
+gap:40px;
+}
+
+.menu li a{
+text-decoration:none;
+color:white;
+font-weight:600;
+letter-spacing:1px;
+}
+
+nav ul li a:hover{
+color:#e63946;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+font-size:28px;
+color:white;
+cursor:pointer;
+}
+
+/* HEADER */
+
+.MainHeader{
+background-image:url('./assets/header.png');
+background-size:cover;
+background-position:center;
+height:726px;
+width:100%;
+display:flex;
+}
+
+.MainHeader h1{
+font-size:110px;
+font-weight:700;
+line-height:90%;
+color:white;
+margin-left:100px;
+margin-top:200px;
+font-family:"Saira Condensed", sans-serif;
+}
+
+/* IMAGE SECTION */
+
+.picture1{
+position:absolute;
+width:500px;
+height:350px;
+top:875px;
+left:60px;
+}
+
+/* CONTENT TEXT */
+
+.MainContentText{
+position:absolute;
+width:600px;
+top:1025px;
+left:650px;
+font-size:16px;
+line-height:170%;
+color:var(--GrayColor);
+}
+
+.MainContentText1{
+position:absolute;
+width:600px;
+top:1150px;
+left:650px;
+font-size:16px;
+line-height:170%;
+color:var(--GrayColor);
+}
+
+/* COACHES */
+
+.coaches{
+padding:80px 0;
+}
+
+.coach{
+display:flex;
+align-items:center;
+margin-bottom:40px;
+gap:20px;
+}
+
+.coach img{
+width:400px;
+height:400px;
+border-radius:50%;
+margin-left:40px;
+}
+.coachInfo{
+    border-left: 4px solid var(--maroonColor);
+    padding-left: 20px;
+    line-height: 30px;
+}
+
+.coach p{
+width:400px;
+font-size:16px;
+
+}
+.form2 h1{
+border-left:5px solid var(--maroonColor);
+padding-left:20px;
+font-size:35px;
+margin-left:40px;
+font-family:"Saira Condensed";
+color: #656565;
+}
+
+.row h2{
+border-left:5px solid var(--maroonColor);
+padding-left:20px;
+font-size:35px;
+margin-left:640px;
+margin-top:145px;
+font-family:"Saira Condensed";
+}
+
+/* BLACK SECTION */
+
+.blackSection{
+background:black;
+width:100%;
+height:300px;
+margin-top:350px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.blackSection h1{
+color:white;
+font-size:35px;
+width:800px;
+}
+
+.blackSection h5{
+color:#ffffff80;
+font-size:16px;
+margin-top:20px;
+}
+
+/* PLAYER SECTION */
+
+.player{
+width:100%;
+height:700px;
+background-color:#B53232;
+}
+
+.playerdiv{
+width:100%;
+display:grid;
+grid-template-columns:2fr 1fr;
+position:relative;
+}
+
+.playerinfo{
+display:flex;
+flex-direction:column;
+width:75%;
+position:absolute;
+transform:translateX(-25%);
+}
+
+.pw{
+font-size:40px;
+padding-top:200px;
+text-align:center;
+color:#ffffff80;
+}
+
+.playern{
+font-size:50px;
+text-align:center;
+color:white;
+}
+
+.player-img{
+max-width:700px;
+justify-self:end;
+}
+
+.pboy{
+width:900px;
+height:700px;
+object-fit:cover;
+display:block;
+}
+
+/* PLAYER STATS */
+
+.count{
+display:flex;
+gap:40px;
+justify-content:center;
+margin-top:30px;
+}
+
+.goals,.assists{
+font-size:35px;
+color:#4395D2;
+display:flex;
+gap:5px;
+}
+
+.goal,.assist{
+color:#00000080;
+font-size:35px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:80px;
+text-align:center;
+}
+
+.gallery-container{
+position:relative;
+width:700px;
+margin:auto;
+height:300px;
+}
+
+.img{
+width:350px;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+position:absolute;
+}
+
+.img1{
+left:0;
+top:40px;
+z-index:1;
+}
+
+.img2{
+left:180px;
+top:0;
+z-index:3;
+}
+
+.img3{
+left:360px;
+top:40px;
+z-index:2;
+}
+
+.GalleryPhotos{
+border-left:5px solid var(--maroonColor);
+padding-left:20px;
+font-size:25px;
+margin-left:100px;
+color:#656565;
+margin-top:40px;
+}
+
+/* PARAGRAPH */
+
+.mainPara{
+width:100%;
+height:200px;
+display:flex;
+gap:30px;
+}
+
+.para1,.para2{
+width:50%;
+margin-top:30px;
+text-align:left;
+}
+
+/* FORM */
+
+.form1{
+display:flex;
+flex-direction:column;
+gap:20px;
+width:100%;
+margin-top:80px;
+height:500px;
+padding:30px;
+}
+
+.form1 input{
+width:40%;
+height:80px;
+font-size:16px;
+border:1px solid black;
+padding:10px;
+border-radius:20px;
+margin-top:50px;
+}
+
+/* FOOTER */
+
+.lastBox{
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:50px;
+background:black;
+height:300px;
+width:100%;
+color:var(--maroonColor);
+gap:50px;
+}
+
+.lastBox ul{
+list-style:none;
+}
+
+.lastBox ul li a{
+display:inline-block;
+margin-right:20px;
+text-decoration:none;
+color:var(--maroonColor);
+line-height:30px;
+}
+
+.lastBox i{
+font-size:30px;
+margin-left:20px;
+}
+
+.lastBox h1{
+width:30%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+.menu{
+flex-direction:column;
+gap:15px;
+background:black;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+display:none;
+padding:20px;
+}
+
+.menu.active{
+display:flex;
+}
+
+.hamburger{
+display:block;
+}
+
+.MainHeader{
+height:500px;
+}
+
+.MainHeader h1{
+font-size:45px;
+margin-left:20px;
+margin-top:150px;
+}
+
+.row h2{
+margin-left:20px;
+font-size:28px;
+}
+
+.blackSection{
+height:auto;
+padding:40px 20px;
+}
+
+.blackSection h1{
+font-size:22px;
+width:100%;
+}
+
+.coach{
+flex-direction:column;
+text-align:center;
+}
+
+.coach img{
+width:200px;
+height:200px;
+margin:0;
+}
+
+.coach p{
+width:90%;
+margin:20px auto;
+}
+
+.count{
+flex-direction:column;
+gap:10px;
+}
+
+.gallery-container{
+position:static;
+display:flex;
+flex-direction:column;
+align-items:center;
+height:auto;
+gap:20px;
+}
+
+.img{
+position:static;
+width:90%;
+height:auto;
+}
+
+.mainPara{
+flex-direction:column;
+}
+
+.form1 input{
+width:90%;
+height:60px;
+}
+
+.lastBox{
+flex-direction:column;
+text-align:center;
+gap:30px;
+height:auto;
+padding:40px 20px;
+}
+
+.lastBox h1{
+width:100%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+
+
+<section class="MainHeader">
+
+<header class="navbar">
+
+<div class="logo">
+<img src="./assets/logo.png"alt="logo">
+</div>
+
+<nav>
+<ul class="menu" id="menu">
+<li><a href="#">CHAMPACAD</a></li>
+<li><a href="#">HOME</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">REGISTER</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+</nav>
+
+<div class="hamburger" id="hamburger">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</header>
+
+<h1>
+TRAIN LIKE <br>
+A <span class="maroonColor">CHAMP</span>
+</h1>
+
+</section>
+
+
+
+<section class="MainContent">
+
+<div class="row">
+
+<div class="col-6">
+<img class="picture1" src="./assets/picture1.png">
+</div>
+
+<div class="col-6">
+
+<h2>
+FOUNDING OF THE <br>
+FOOTBALL ACADEMY
+</h2>
+
+<p class="MainContentText">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+</p>
+
+<p class="MainContentText1">
+And scrambled it to make a type specimen book. It has survived not only
+five centuries, but also the leap into electronic typesetting.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="blackSection">
+
+<h1>
+NEVER LET THE <span class="maroonColor">FEAR</span> OF LOSING
+KEEP YOU FROM <span class="maroonColor">WINNING</span> THE GAME
+</h1>
+
+<h5>REGISTER NOW</h5>
+
+</section>
+
+
+<section class="coaches">
+
+<div class="coach">
+
+<img src="./assets/Ellipse 1.png">
+
+<div class="coachInfo">
+
+<h1>JAN PANTUCEK</h1>
+<h4>HEAD COACH</h4>
+
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="coach">
+
+<img src="./assets/Ellipse 5.png">
+
+<div class="coachInfo">
+
+<h1>OLIVER WAHN</h1>
+<h4>ASSISTANT COACH</h4>
+
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="coach">
+
+<img src="./assets/Ellipse 6.png">
+
+<div class="coachInfo">
+
+<h1>BRANDON HULK</h1>
+<h4>FITNESS COACH</h4>
+
+<p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PLAYER SECTION -->
+
+<section class="player">
+
+<div class="playerdiv">
+
+<div class="playerinfo">
+
+<h6 class="pw">PLAYER OF THE WEEK</h6>
+
+<h6 class="playern">JOHAN BRANDY</h6>
+
+<div class="count">
+
+<h3 class="goals">10 <span class="goal">GOALS</span></h3>
+
+<h3 class="assists">5 <span class="assist">ASSISTS</span></h3>
+
+</div>
+
+</div>
+
+<div class="player-img">
+<img src="./assets/player 1.png" class="pboy">
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY TITLE -->
+
+<div class="GalleryPhotos">
+<h1>GALLERY</h1>
+</div>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+
+<div class="gallery-container">
+
+<img src="./assets/train1 1.png" class="img img1">
+<img src="./assets/train2 1.png" class="img img2">
+<img src="./assets/train3 1.png" class="img img3">
+
+</div>
+
+<div class="galleryIcons">
+<i class="fa-solid fa-less-than"></i>
+<i class="fa-solid fa-greater-than"></i>
+</div>
+
+<div class="mainPara">
+
+<div class="para1">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias alias distinctio nam debitis assumenda quis eveniet numquam aperiam ullam ducimus eius, perferendis fuga corporis incidunt nisi quod beatae aliquam porro?
+Laborum perspiciatis libero praesentium eos voluptates, eligendi tempore accusantium tempora quo, voluptatem repellat explicabo? Quidem, autem totam, vitae alias nobis assumenda laborum sint veniam sunt hic numquam. Ipsa, enim ut?</p>
+</div>
+
+<div class="para2">
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet obcaecati nulla delectus pariatur nisi, quaerat inventore ipsam odit sint impedit ut rem repellat recusandae, vitae eius assumenda fugiat asperiores velit.
+Reiciendis adipisci corporis cupiditate odio laborum, sunt unde, delectus eius perferendis minima atque doloremque quisquam soluta et eum ab! Optio voluptas praesentium suscipit officiis mollitia facilis illo dolores ullam fuga.</p>
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="form1">
+
+<div class="form2">
+<h1>JOIN THE TEAM!</h1>
+</div>
+
+<input type="text" placeholder="NAME">
+<input type="text" placeholder="SURNAME">
+<input type="date">
+<input type="number" placeholder="PHONE NUMBER">
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="lastBox">
+
+<h1>READY FOR YOUR FIRST TRAINING?</h1>
+
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">ABOUT</a></li>
+<li><a href="#">REGISTER</a></li>
+<li><a href="#">CONTACT</a></li>
+</ul>
+
+<div class="lastIcon">
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-twitter"></i>
+</div>
+
+</footer>
+
+</body>
+</html>
